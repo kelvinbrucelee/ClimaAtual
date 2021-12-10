@@ -1,0 +1,50 @@
+.App .Cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    
+}
+
+.App .Tit {
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    color: rgb(17, 17, 17);
+    overflow: hidden;
+    font-family: Fantasy, Helvetica, sans-serif;
+    border-color: blanchedalmond;
+
+}
+.App .Titulo{
+    overflow: hidden;
+    flex-direction: column;
+    max-width: 500px;
+    min-width: 400px;
+}
+
+nav {
+
+    width: 100%;
+    display: flex;
+    position: fixed;
+    background-color: #00ff;
+    z-index: 99;
+
+}
+nav a {
+
+    color: #fff;
+    margin: auto 50px auto 40px;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+nav li {
+
+    float: left;
+    list-style: none;
+    margin-left: 20px;
+
+}
