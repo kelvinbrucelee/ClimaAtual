@@ -9,10 +9,10 @@
 /coverage
 
 # production
-#/build
+/build
 
 .env
-netlify.toml
+#netlify.toml
 
 # misc
 .DS_Store
