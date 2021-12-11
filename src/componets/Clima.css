@@ -1,52 +1,41 @@
 .Card {
-    border: 12px solid;
+    border: 10px solid;
     border-radius: 30px 30px 30px 30px;
     overflow: hidden;
     margin: 10px;
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    min-width: 400px;
-    margin-top: 200px;
+    margin-top: 150px;
+    box-sizing: border-box;
 }
 
 .Card .Title {
     padding: 10px 10px;
-    display: flex;
     justify-content: center;
     font-size: 10px;
     background-color: rgb(23, 23, 24);
     color: rgb(246, 247, 244);
 }
+.Card .text-center{
+  background-color: rgb(23, 23, 24);
+  color: rgb(246, 247, 244);
+}
 
 .Card .Content {
     flex-grow: 1;
-    background-color: seashell;
-    color: rgb(7, 7, 7);
+    background-color: rgb(252, 249, 249);
     font-size: 15px;
-    margin-top: 20px;
-    margin-top: 7px;
 }
 .Card h1{
     font-size: 25px;
 }
 .Alerta {
     background-color: rgb(12, 12, 12);
-    color: rgb(244, 247, 250);
-    border-radius: 50px 50px 50px 50px;
+    border-radius: 50px 50px 0px 0px;
     display: flex;
     flex-direction: column;
-    max-width: 300px;
-    min-width: 300px;
-    margin-top: 200px;
+    margin-top: 150px;
 }
-.Alerta li {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    max-width: 230px;
-    min-width: 200px;
-  }
 
   .loader,
 .loader:after {
@@ -68,7 +57,7 @@
   transform: translateZ(0);
   -webkit-animation: load8 1.1s infinite linear;
   animation: load8 1.1s infinite linear;
-  margin-top: 300px;
+  margin-top: 200px;
 }
 @-webkit-keyframes load8 {
   0% {

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./Clima.css"
-import { Image } from 'react-bootstrap';
+import { OverlayTrigger, Card, ProgressBar, Badge, ListGroupItem, ListGroup, Tooltip } from 'react-bootstrap';
 import axios from 'axios'
 
 export default props => {
@@ -9,11 +9,11 @@ export default props => {
   const [weather, setWeather] = useState(false);
 
   let getWeather = async (lat, long) => {
-    let res = await axios.get("http://api.openweathermap.org/data/2.5/weather", {
+    let res = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
       params: {
         lat: lat,
         lon: long,
-        appid: process.env.REACT_APP_OPEN_WHEATHER_KEY,
+        appid: "61a6c6f7a81962b8d69cc80d900a8543",
         lang: 'pt',
         units: 'metric'
       }
@@ -28,18 +28,16 @@ export default props => {
     })
   }, [])
 
-  const cardStyle = {
-    backgroundColor: props.color || '#00ff',
-    borderColor: props.color || '#00ff',
-  }
   if (location == false) {
     return (
-      <div className='Alerta'>
-        <ul>
-          <li>Você precisa habilitar a localização no browser</li>
-        </ul>
-        <Image src={process.env.PUBLIC_URL + '/img/localizacao.png'} thumbnail />
-      </div>
+      <Card className="Alerta" style={{ width: '23rem' }}>
+        <Card.Img variant="top" src={process.env.PUBLIC_URL + '/img/localizacao.png'} />
+        <Card.Body>
+        </Card.Body>
+        <ListGroup className="list-group-flush">
+          <ListGroupItem>Você precisa habilitar a localização no browser</ListGroupItem>
+        </ListGroup>
+      </Card>
     )
   } else if (weather == false) {
     return (
@@ -49,18 +47,25 @@ export default props => {
     )
   } else {
     return (
-      <div className="Card" style={cardStyle}>
-        <div className="Title"><h1>Clima nas suas Coordenadas:<br /> {weather['weather'][0]['description']}°</h1></div>
-        <Fragment>
-          <div className="Content">
-            <a>Temperatuta atual: {weather['main']['temp']}°</a><br />
-            <a>Temperatura Maxima: {weather['main']['temp_max']}°</a><br />
-            <a>Temperatura Minima: {weather['main']['temp_min']}°</a><br />
-            <a>Pressão: {weather['main']['pressure']} hpa</a><br />
-            <a>Humidade: {weather['main']['humidity']}%</a>
-          </div>
-        </Fragment>
-      </div>
+      <Card className="Card" border="dark" style={{ width: '23rem' }}>
+        <Card.Header className="text-center" as="h5">Clima nas suas Coordenadas:<br /> {weather['weather'][0]['description']}°</Card.Header>
+        <Card.Body>
+          <Card.Text>
+            <a>Temperatuta atual: <Badge bg="secondary" pill bg="warning" text="dark">{weather['main']['temp']}°</Badge></a><br />
+            <a>Temperatura Maxima: <Badge bg="secondary" pill bg="danger" text="dark">{weather['main']['temp_max']}°</Badge> </a><br />
+            <a>Temperatura Minima: <Badge bg="secondary" pill bg="info" text="dark">{weather['main']['temp_min']}°</Badge> </a><br />
+            <div>
+              <a>Pressão: <Badge bg="secondary" pill bg="success" text="dark">{weather['main']['pressure']} hpa</Badge> </a><br />
+              <a>Humidade: <Badge bg="secondary" pill bg="secondary" text="dark">{weather['main']['humidity']}%</Badge></a>
+              <div>
+                <OverlayTrigger overlay={<Tooltip id="tooltip-disabled">Humidade: {weather['main']['humidity']}%</Tooltip>}>
+                  <ProgressBar striped variant="info" now={weather['main']['humidity']} />
+                </OverlayTrigger>
+              </div>
+            </div>
+          </Card.Text>
+        </Card.Body>
+      </Card>
     )
   }
 }

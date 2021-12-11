@@ -18,3 +18,21 @@ h2,
 h3 {
     margin: 0;
 }
+
+/* Small devices (portrait tablets and large phones, 640px and up) */
+@media only screen and (min-width: 640px) {
+    .landing-wrapper {
+      background-size: 0px;
+      background-repeat: no-repeat;
+      background-position: top center;
+    }
+  }
+  
+  /* Large devices (laptops/desktops, 1024px and up) */
+  @media only screen and (min-width: 1024px) {
+    .landing-wrapper {
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: top left;
+    }
+  }
