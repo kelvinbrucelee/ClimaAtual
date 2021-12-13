@@ -9,9 +9,9 @@
 /coverage
 
 # production
-/build
+#/build
 
-.env
+#.env
 #netlify.toml
 
 # misc

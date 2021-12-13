@@ -1,38 +1,13 @@
+html,
 body {
-    font-family: Oswald;
-    background-color: rgb(27, 177, 182);
-    color: rgb(237, 243, 179);
-    text-align: center;
-    font-size: 1.2rem;
-    padding: 0;
-    margin: 0;
+  height: 100%;
 }
 
-h1,
-h2,
-h3 {
-    font-weight: 200;
+#page-content {
+  flex: 1 0 auto;
 }
 
-h2,
-h3 {
-    margin: 0;
+body {
+  background: #f0e768;
+  background: linear-gradient(to right, #f0e768, #33AEFF);
 }
-
-/* Small devices (portrait tablets and large phones, 640px and up) */
-@media only screen and (min-width: 640px) {
-    .landing-wrapper {
-      background-size: 0px;
-      background-repeat: no-repeat;
-      background-position: top center;
-    }
-  }
-  
-  /* Large devices (laptops/desktops, 1024px and up) */
-  @media only screen and (min-width: 1024px) {
-    .landing-wrapper {
-      background-size: auto;
-      background-repeat: no-repeat;
-      background-position: top left;
-    }
-  }

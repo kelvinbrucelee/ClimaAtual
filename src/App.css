@@ -3,18 +3,17 @@
     justify-content: center;
     flex-wrap: wrap;
     
-    
 }
 
 .App .Tit {
     display: flex;
     justify-content: center;
-    font-size: 29px;
+    font-size: 35px;
     color: rgb(248, 247, 247);
     overflow: hidden;
-    font-family: Fantasy, Helvetica, sans-serif;
+    font-family: Goudy Bookletter 1911, sans-serif;
     border-color: blanchedalmond;
-    background-color: black;
+    background-color: #343a40;
     text-align: center;
 
 }
