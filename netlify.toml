@@ -2,6 +2,3 @@
 base = "."
 command = "npm run build"
 publish = "./build"
-
-[build.enviroment]
-REACT 
