@@ -7,7 +7,7 @@ import Clima from './componets/Clima'
 export default _ =>
     <div className="App">
         <Card className="Tit">
-            <Card.Body class="fw-light mt-3 text-white">TEMPO E TEMPERATURA</Card.Body>
+            <Card.Body contenteditable="true" class="fw-light mt-3 text-white">TEMPO E TEMPERATURA</Card.Body>
         </Card>
         <div className="Cards">
             <Clima>
